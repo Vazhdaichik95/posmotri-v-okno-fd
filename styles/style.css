@@ -59,6 +59,7 @@ ol {
 }
 
 .result__video-container {
+  position: relative;
   width: 711px;
   height: 386px;
   margin-bottom: 16px;
@@ -67,7 +68,7 @@ ol {
 .result__video {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .search-form {
@@ -158,6 +159,39 @@ ol {
   cursor: pointer;
 }
 
+.button {
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 6px 0;
+}
+
+.button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+  text-decoration: none;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__submit-button {
+  align-self: flex-end;
+  width: 194px;
+}
+
 .content__details {
   width: 100%;
   height: 100%;
@@ -177,6 +211,7 @@ ol {
 }
 
 .content__list-container {
+  position: relative;
   height: 298px;
   overflow-y: scroll;
 }
@@ -198,12 +233,33 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding-right: 5px;
 }
 
 .content__card-link {
   color: #fff;
   text-decoration: none;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus .content__video-card {
+  border: none;
+  outline: 1px solid #fff;
+}
+
+.content__card-link_current .content__video-card {
+  background-color: #545050;
+}
+
+.content__list-item {
+  padding-left: 3px;
+  padding-right: 3px;
 }
 
 .content__video-card {
@@ -216,7 +272,7 @@ ol {
 }
 
 .content__video-card-title {
-  width: 195px;
+  width: 196px;
   font-family: 'Oswald', sans-serif;
   font-size: 30px;
   font-weight: 700;
@@ -227,17 +283,23 @@ ol {
 }
 
 .content__video-card-description {
+  width: 196px;
   font-size: 18px;
   line-height: 90%;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-}
+  -webkit-line-clamp: 4;
+} 
 
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
   object-fit: fill;
   object-position: center;
+}
+
+.more-button {
+  margin-top: 30px;
+  width: 100%;
 }
